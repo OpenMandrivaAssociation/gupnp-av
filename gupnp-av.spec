@@ -49,7 +49,7 @@ Files for development with gupnp-av.
 
 %prep
 %setup -q
-%patch -p1
+%patch -p1 -b .format-string
 
 %build
 %configure2_5x --disable-static
