@@ -3,7 +3,7 @@
 %define libname %mklibname %name %api %major
 %define develname %mklibname -d %name
 Name:           gupnp-av
-Version:        0.2.1
+Version:        0.3
 Release:        %mkrel 1
 Summary:        A collection of helpers for building UPnP AV applications
 
@@ -11,7 +11,6 @@ Group:          System/Libraries
 License:        LGPLv2+
 URL:            http://www.gupnp.org/
 Source0:        http://www.gupnp.org/sources/%{name}/%{name}-%{version}.tar.gz
-Patch: gupnp-av-0.2.1-format-string.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: gtk-doc
 BuildRequires: gupnp-devel
@@ -49,7 +48,6 @@ Files for development with gupnp-av.
 
 %prep
 %setup -q
-%patch -p1 -b .format-string
 
 %build
 %configure2_5x --disable-static
