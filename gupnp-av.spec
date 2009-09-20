@@ -1,9 +1,9 @@
 %define api 1.0
-%define major 1
+%define major 2
 %define libname %mklibname %name %api %major
 %define develname %mklibname -d %name
 Name:           gupnp-av
-Version:        0.4.1
+Version:        0.5.1
 Release:        %mkrel 1
 Summary:        A collection of helpers for building UPnP AV applications
 
