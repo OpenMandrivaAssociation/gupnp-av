@@ -3,7 +3,7 @@
 %define libname %mklibname %name %api %major
 %define develname %mklibname -d %name
 Name:           gupnp-av
-Version:        0.5.4
+Version:        0.5.5
 Release:        %mkrel 1
 Summary:        A collection of helpers for building UPnP AV applications
 
@@ -14,6 +14,7 @@ Source0:        http://www.gupnp.org/sources/%{name}/%{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: gtk-doc
 BuildRequires: gupnp-devel
+BuildRequires: gobject-introspection-devel
 
 %description
 GUPnP is an object-oriented open source framework for creating UPnP
@@ -69,6 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING README
 %{_libdir}/libgupnp-av-%api.so.%{major}*
+%_libdir/girepository-1.0/GUPnPAV-%api.typelib
 
 %files -n %develname
 %defattr(-,root,root,-)
@@ -77,4 +79,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/pkgconfig/gupnp-av-%api.pc
 %{_libdir}/libgupnp-av-%api.so
 %{_libdir}/libgupnp-av-%api.la
-
+%_datadir/gir-1.0/GUPnPAV-%api.gir
