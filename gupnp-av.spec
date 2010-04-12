@@ -15,6 +15,8 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: gtk-doc
 BuildRequires: gupnp-devel
 BuildRequires: gobject-introspection-devel
+#gw TODO: remove this
+BuildRequires: gir-repository
 
 %description
 GUPnP is an object-oriented open source framework for creating UPnP
