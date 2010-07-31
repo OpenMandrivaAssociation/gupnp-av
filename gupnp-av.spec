@@ -4,7 +4,7 @@
 %define develname %mklibname -d %name
 Name:           gupnp-av
 Version:        0.5.7
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        A collection of helpers for building UPnP AV applications
 
 Group:          System/Libraries
