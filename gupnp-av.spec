@@ -1,6 +1,7 @@
 %define api 1.0
 %define major 2
 %define libname %mklibname %{name} %{api} %{major}
+%define girname %mklibname %{name}-gir %{api}
 %define develname %mklibname -d %{name}
 
 Summary:	A collection of helpers for building UPnP AV applications
@@ -11,11 +12,9 @@ Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://www.gupnp.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
-BuildRequires: gtk-doc
-BuildRequires: gupnp-devel
-BuildRequires: gobject-introspection-devel
-#gw for Soup-2.4.gir
-BuildRequires: gir-repository
+BuildRequires: pkgconfig(gobject-introspection-1.0)
+BuildRequires: pkgconfig(gtk-doc)
+BuildRequires: pkgconfig(gupnp-1.0)
 
 %description
 GUPnP is an object-oriented open source framework for creating UPnP
@@ -37,6 +36,13 @@ The GUPnP API is intended to be easy to use, efficient and flexible.
 GUPnP-AV is a collection of helpers for building AV (audio/video) 
 applications using GUPnP.
 
+%package -n %{girname}
+Summary: GObject Introspection interface description for %{name}
+Group: System/Libraries
+Requires: %{libname} = %{version}-%{release}
+ 	
+%description -n %{girname}
+GObject Introspection interface description for %{name}.
 
 %package -n %{develname}
 Summary: Development package for gupnp-av
@@ -49,10 +55,13 @@ Files for development with gupnp-av.
 
 %prep
 %setup -q
+%apply_patches
+mkdir m4
+autoreconf -fi
 
 %build
 %configure2_5x --disable-static
-%make
+%make LIBS='-lgmodule-2.0'
 
 %install
 %makeinstall_std
@@ -60,6 +69,8 @@ Files for development with gupnp-av.
 %files -n %{libname}
 %doc AUTHORS COPYING README
 %{_libdir}/libgupnp-av-%{api}.so.%{major}*
+
+%files -n %{girname}
 %{_libdir}/girepository-1.0/GUPnPAV-%{api}.typelib
 
 %files -n %{develname}
