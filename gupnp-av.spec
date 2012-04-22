@@ -56,7 +56,6 @@ Files for development with gupnp-av.
 %prep
 %setup -q
 %apply_patches
-mkdir m4
 autoreconf -fi
 
 %build
