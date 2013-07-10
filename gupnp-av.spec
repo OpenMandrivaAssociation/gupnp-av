@@ -8,7 +8,7 @@
 
 Summary:	A collection of helpers for building UPnP AV applications
 Name:		gupnp-av
-Version:	0.10.3
+Version:	0.12.2
 Release:	1
 Group:		System/Libraries
 License:	LGPLv2+
@@ -17,6 +17,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-av/%{url_ver}/%{name}-%{ve
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gtk-doc)
 BuildRequires:	pkgconfig(gupnp-1.0)
+BuildRequires:  vala-tools
 
 %description
 GUPnP is an object-oriented open source framework for creating UPnP
@@ -79,4 +80,6 @@ autoreconf -fi
 %{_libdir}/pkgconfig/gupnp-av-%{api}.pc
 %{_libdir}/libgupnp-av-%{api}.so
 %{_datadir}/gir-1.0/GUPnPAV-%{api}.gir
+%{_datadir}/%{name}
+%{_datadir}/vala/vapi/*
 
