@@ -9,7 +9,7 @@
 Summary:	A collection of helpers for building UPnP AV applications
 Name:		gupnp-av
 Version:	0.12.2
-Release:	6
+Release:	7
 Group:		System/Libraries
 License:	LGPLv2+
 Url:		http://www.gupnp.org/
