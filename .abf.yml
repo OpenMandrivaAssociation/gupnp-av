@@ -1,2 +1,4 @@
+removed_sources:
+  gupnp-av-0.12.2.tar.xz: c1b63f3bd919969f7db1e07156545ef197cec3ee
 sources:
- gupnp-av-0.12.2.tar.xz: c1b63f3bd919969f7db1e07156545ef197cec3ee 
+  gupnp-av-0.12.6.tar.xz: 8ea44b3b9bd1dcb2ad56d56943fc1cd235570d00
