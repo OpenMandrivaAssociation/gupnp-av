@@ -8,7 +8,7 @@
 
 Summary:	A collection of helpers for building UPnP AV applications
 Name:		gupnp-av
-Version:	0.12.6
+Version:	 0.12.7
 Release:	2
 Group:		System/Libraries
 License:	LGPLv2+
@@ -24,7 +24,7 @@ GUPnP is an object-oriented open source framework for creating UPnP
 devices and control points, written in C using GObject and libsoup.
 The GUPnP API is intended to be easy to use, efficient and flexible.
 
-GUPnP-AV is a collection of helpers for building AV (audio/video) 
+GUPnP-AV is a collection of helpers for building AV (audio/video)
 applications using GUPnP.
 
 %package -n %{libname}
@@ -36,7 +36,7 @@ GUPnP is an object-oriented open source framework for creating UPnP
 devices and control points, written in C using GObject and libsoup.
 The GUPnP API is intended to be easy to use, efficient and flexible.
 
-GUPnP-AV is a collection of helpers for building AV (audio/video) 
+GUPnP-AV is a collection of helpers for building AV (audio/video)
 applications using GUPnP.
 
 %package -n %{girname}
