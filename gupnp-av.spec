@@ -16,7 +16,7 @@ Url:		http://www.gupnp.org/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-av/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gtk-doc)
-BuildRequires:	pkgconfig(gupnp-1.0)
+BuildRequires:	pkgconfig(gupnp-1.2)
 BuildRequires:  vala-tools
 
 %description
