@@ -8,8 +8,8 @@
 
 Summary:	A collection of helpers for building UPnP AV applications
 Name:		gupnp-av
-Version:	 0.12.7
-Release:	4
+Version:	0.12.11
+Release:	1
 Group:		System/Libraries
 License:	LGPLv2+
 Url:		http://www.gupnp.org/
@@ -62,10 +62,10 @@ autoreconf -fi
 
 %build
 %configure2_5x --disable-static
-%make LIBS='-lgmodule-2.0'
+%make_build LIBS='-lgmodule-2.0'
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/libgupnp-av-%{api}.so.%{major}*
