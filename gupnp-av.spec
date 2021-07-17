@@ -1,14 +1,14 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 
 %define api	1.0
-%define major	2
+%define major	3
 %define libname	%mklibname %{name} %{api} %{major}
 %define girname	%mklibname %{name}-gir %{api}
 %define devname	%mklibname -d %{name}
 
 Summary:	A collection of helpers for building UPnP AV applications
 Name:		gupnp-av
-Version:	0.12.11
+Version:	0.13.0
 Release:	1
 Group:		System/Libraries
 License:	LGPLv2+
@@ -17,7 +17,9 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-av/%{url_ver}/%{name}-%{ve
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gtk-doc)
 BuildRequires:	pkgconfig(gupnp-1.2)
+BuildRequires:  pkgconfig(vapigen)
 BuildRequires:  vala-tools
+BuildRequires:  meson
 
 %description
 GUPnP is an object-oriented open source framework for creating UPnP
@@ -58,14 +60,14 @@ Files for development with gupnp-av.
 %prep
 %setup -q
 %autopatch -p1
-autoreconf -fi
 
 %build
-%configure2_5x --disable-static
-%make_build LIBS='-lgmodule-2.0'
+%meson  \
+        -Dgtk_doc=true
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %files -n %{libname}
 %{_libdir}/libgupnp-av-%{api}.so.%{major}*
@@ -74,7 +76,7 @@ autoreconf -fi
 %{_libdir}/girepository-1.0/GUPnPAV-%{api}.typelib
 
 %files -n %{devname}
-%doc AUTHORS COPYING README
+%doc AUTHORS COPYING README.md
 %{_datadir}/gtk-doc/html/gupnp-av/
 %{_includedir}/gupnp-av-%{api}
 %{_libdir}/pkgconfig/gupnp-av-%{api}.pc
