@@ -62,7 +62,8 @@ Files for development with gupnp-av.
 %autopatch -p1
 
 %build
-%meson
+%meson  \
+        -Dgtk_doc=true
 %meson_build
 
 %install
