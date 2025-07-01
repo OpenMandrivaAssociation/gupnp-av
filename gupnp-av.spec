@@ -77,7 +77,7 @@ Files for development with gupnp-av.
 
 %files -n %{devname}
 %doc AUTHORS COPYING README.md
-%{_datadir}/gtk-doc/html/gupnp-av/
+#{_datadir}/gtk-doc/html/gupnp-av/
 %{_includedir}/gupnp-av-%{api}
 %{_libdir}/pkgconfig/gupnp-av-%{api}.pc
 %{_libdir}/libgupnp-av-%{api}.so
