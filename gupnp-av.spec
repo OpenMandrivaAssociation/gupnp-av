@@ -8,12 +8,12 @@
 
 Summary:	A collection of helpers for building UPnP AV applications
 Name:		gupnp-av
-Version:	0.14.3
+Version:	0.14.4
 Release:	1
 Group:		System/Libraries
 License:	LGPLv2+
 Url:		https://www.gupnp.org/
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gupnp-av/%{url_ver}/%{name}-%{version}.tar.xz
+Source0:	https://ftp.gnome.org/pub/GNOME/sources/gupnp-av/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gtk-doc)
 BuildRequires:	pkgconfig(gupnp-1.6)
