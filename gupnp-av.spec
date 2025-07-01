@@ -15,7 +15,7 @@ License:	LGPLv2+
 Url:		https://www.gupnp.org/
 Source0:	https://ftp.gnome.org/pub/GNOME/sources/gupnp-av/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
-BuildRequires:	pkgconfig(gtk-doc)
+BuildRequires:	pkgconfig(gi-docgen)
 BuildRequires:	pkgconfig(gupnp-1.6)
 BuildRequires:  pkgconfig(vapigen)
 BuildRequires:  vala-tools
