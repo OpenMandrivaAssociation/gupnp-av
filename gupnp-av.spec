@@ -2,14 +2,16 @@
 
 %define api	1.0
 %define major	3
-%define libname	%mklibname %{name} %{api} %{major}
-%define girname	%mklibname %{name}-gir %{api}
+%define libname	%mklibname %{name}
+%define oldlibname %mklibname %{name} 1.0 3
+%define girname	%mklibname %{name}-gir
+%define oldgirname %mklibname %{name}-gir 1.0
 %define devname	%mklibname -d %{name}
 
 Summary:	A collection of helpers for building UPnP AV applications
 Name:		gupnp-av
-Version:	0.14.4
-Release:	2
+Version:	0.14.5
+Release:	1
 Group:		System/Libraries
 License:	LGPLv2+
 Url:		https://www.gupnp.org/
@@ -32,6 +34,7 @@ applications using GUPnP.
 %package -n %{libname}
 Summary:	 A collection of helpers for building UPnP AV applications
 Group:		System/Libraries
+%rename %{oldlibname}
 
 %description -n %{libname}
 GUPnP is an object-oriented open source framework for creating UPnP
@@ -44,6 +47,7 @@ applications using GUPnP.
 %package -n %{girname}
 Summary:	GObject Introspection interface description for %{name}
 Group:		System/Libraries
+%rename %{oldgirname}
 
 %description -n %{girname}
 GObject Introspection interface description for %{name}.
@@ -58,8 +62,7 @@ Provides:	%{name}-devel = %{version}-%{release}
 Files for development with gupnp-av.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 %meson  \
